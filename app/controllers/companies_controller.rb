@@ -17,6 +17,7 @@ class CompaniesController < ApplicationController
     if @company.save
       redirect_to companies_path, notice: "Saved"
     else
+      flash[:error] = @company.errors.first[1]
       render :new
     end
   end
@@ -28,9 +29,20 @@ class CompaniesController < ApplicationController
     if @company.update(company_params)
       redirect_to companies_path, notice: "Changes Saved"
     else
+      flash[:error] = @company.errors.first[1]
       render :edit
     end
-  end  
+  end 
+  
+  def destroy
+    @company = Company.find(params[:id])
+    if @company.destroy
+      redirect_to companies_path, notice: "Company Deleted Successfully"
+    else
+      flash[:error] = "Something Went Wrong. Please try again."
+      render :index
+    end
+  end
 
   private
 
@@ -42,6 +54,7 @@ class CompaniesController < ApplicationController
       :zip_code,
       :phone,
       :email,
+      :color,
       :owner_id,
       services: []
     )

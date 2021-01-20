@@ -70,6 +70,17 @@
     </div>
 
     <div class="row my-lg-3">
+      <div class="col-lg-3">
+        <label><strong>Color</strong><br><small class="text-muted">Select the colour for branding</small></label>
+      </div>
+      <div class="col-lg offset-lg-1">
+          <div data-controller="services" class="form-group">
+          <%= f.color_field :color, value: "#ff0000",class: "form-control"%>
+          </div>
+      </div>
+    </div>
+
+    <div class="row my-lg-3">
       <div class="col">
         <div class="form-group">
           <%= f.submit class: "btn btn-success"%>
