@@ -38,4 +38,12 @@ brown_painting:
   email: "brown_painting@brown_painting.com"
   zip_code:
   phone: "555-808-8888"
-  services: "{Interior Painting}"   
+  services: "{Interior Painting}" 
+  
+nick_painting:
+  name: "Nikhil's Company"
+  email: "testingcompany@getmainstreet.com"
+  zip_code: "23424"
+  city: "Rescue"
+  state: "Virginia"
+  services: "{Interior Painting}"

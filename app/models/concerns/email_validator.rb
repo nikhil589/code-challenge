@@ -3,7 +3,7 @@ class EmailValidator < ActiveModel::Validator
   def validate(record)
     if record.email.present?
       unless is_valid_domain?(record.email)
-        record.errors.add(:email, "Invalid Domain Name")
+        record.errors.add(:email, "Invalid Email! Should belongs to @getmainstreet domain")
       end
     end
   end
